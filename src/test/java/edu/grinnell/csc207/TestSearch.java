@@ -135,4 +135,19 @@ public class TestSearch {
     assertBinarySearchFails(testArr, 0);
   } 
 
+  @Test
+  void extensizeBinarySearchTest() throws Exception {
+    for (int s = 1; s != 32; s++) {
+      int[] testArray = new int[s];
+      for(int i = 0; i < s; i++) {
+        testArray[i] = 2 * i;
+      }
+
+      for (int i = 0; i < s; i++) {
+        assertBinarySearchFinds(i, testArray, 2*i);
+        assertBinarySearchFails(testArray, 2*(i + 1));
+      }
+    }
+  }
+
 } // class TestSearch
