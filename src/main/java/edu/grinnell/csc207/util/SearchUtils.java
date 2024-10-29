@@ -104,7 +104,12 @@ public class SearchUtils {
    */
   public static <T> T search(Iterable<T> values, Predicate<? super T> pred) 
       throws Exception {
-    throw new Exception("Unimplemented");       // STUB
+        for(T value : values ) {
+          if(pred.test(value)) {
+            return value;
+          }
+        } // for
+        throw new Exception("no such element");
   } // search(Iterable<T>, Predicate<? super T>)
 
   /**

@@ -35,6 +35,23 @@ public class SearchExperiments {
                        "victor", "whiskey", "xray", "yankee", "zulu" };
     ArrayList<String> strings = new ArrayList<String>(Arrays.asList(tmp));
 
+    String ex1c = SearchUtils.search(strings, (str) -> str.length() < 5);
+
+    try {
+      String ex1g = SearchUtils.search(strings, (s) -> s.length() == 6);
+      pen.println("The first string of exactly six letters is " + ex1g);
+    } catch (Exception e) {
+      pen.println("There are no strings of exactly six letters.");
+    } // try/catch
+
+    String ex1h = SearchUtils.search(strings, (str) -> str.contains("u"));
+
+    try {
+      pen.println("The first string that contains 'u' " + ex1h);
+    } catch (Exception e) {
+      pen.println("There are no strings contain 'u'.");
+    } // try/catch
+
     pen.close();
   } // main(String[])
 } // class SearchUtils
