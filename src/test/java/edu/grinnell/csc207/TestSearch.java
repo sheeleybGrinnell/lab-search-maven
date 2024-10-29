@@ -126,4 +126,22 @@ public class TestSearch {
     assertBinarySearchFinds(new int[] { 1, 1, 1, 2, 2, 3 }, 3);
   } // testBinarySearchDups()
 
+  @Test
+  void testBinarySearchOdds() throws Exception {
+    int[] testArr = new int[] {1, 2, 3, 4, 5, 6, 7};
+    assertBinarySearchFinds(testArr, 4);
+    assertBinarySearchFinds(testArr, 1);
+    assertBinarySearchFinds(testArr, 7);
+    assertBinarySearchFails(testArr, 0);
+  } 
+
+  @Test
+  void testBinarySearchNonOrdered() throws Exception {
+    int[] testArr = new int[] {1, 6, 5, 4, 2, 3};
+    assertBinarySearchFinds(testArr, 1);
+    assertBinarySearchFinds(testArr, 3);
+    assertBinarySearchFinds(testArr, 5);
+    assertBinarySearchFinds(testArr, 4);
+  }
+
 } // class TestSearch
