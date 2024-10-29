@@ -135,13 +135,4 @@ public class TestSearch {
     assertBinarySearchFails(testArr, 0);
   } 
 
-  @Test
-  void testBinarySearchNonOrdered() throws Exception {
-    int[] testArr = new int[] {1, 6, 5, 4, 2, 3};
-    assertBinarySearchFinds(testArr, 1);
-    assertBinarySearchFinds(testArr, 3);
-    assertBinarySearchFinds(testArr, 5);
-    assertBinarySearchFinds(testArr, 4);
-  }
-
 } // class TestSearch
